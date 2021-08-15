@@ -1,0 +1,230 @@
+{
+  "users": [
+    {
+      "email": "songoku2192@gmail.com",
+      "password": "$2a$10$kWGYJEsMYyo5rcx5z/IQge5K.tB6e4PiL1IvHJQ5wrLc2mirQ9q1a",
+      "name": "Mr Rin",
+      "permissions": 1,
+      "id": 2
+    },
+    {
+      "email": "taquang.hskx.2000@gmail.com",
+      "password": "$2a$10$MRln6kWHTajZlZm91voNlOCQoeoEvw2eHaAw.0MgJ0Xkh7VzbRvDq",
+      "name": "quangtaph12673",
+      "permissions": 0,
+      "id": 3
+    }
+  ],
+  "categories": [
+    {
+      "name": "Mac",
+      "id": 1
+    },
+    {
+      "name": "IPad",
+      "id": 2
+    },
+    {
+      "name": "IPhone",
+      "id": 3
+    },
+    {
+      "name": "Watch",
+      "id": 4
+    }
+  ],
+  "products": [
+    {
+      "name": "MacBook Air 2020 13 inch Apple M1 16GB RAM 256GB SSD",
+      "price": 3000,
+      "photo": "https://firebasestorage.googleapis.com/v0/b/myproject-4370c.appspot.com/o/images%2Fmacbook-air-gray-m1-2020.jpeg?alt=media&token=0b37bab5-606f-4ec4-8d99-b8fff18575be",
+      "status": 0,
+      "categoryId": 1,
+      "id": 1
+    },
+    {
+      "name": "iMac 2021 24 inch Retina 4.5K Apple M1 16GB RAM 256GB SSD 7-Core GPU",
+      "price": 4500,
+      "photo": "https://firebasestorage.googleapis.com/v0/b/myproject-4370c.appspot.com/o/images%2Fcolors_green__imac2021-1024x683.jpeg?alt=media&token=23e9e99b-3a5f-4b29-bf68-b23c3dacfef0",
+      "status": 0,
+      "categoryId": 1,
+      "id": 2
+    },
+    {
+      "name": "MacBook Pro 2020 13 inch (MYD82/MYDA2) Apple M1 8GB RAM 256GB SSD",
+      "price": 3700,
+      "photo": "https://firebasestorage.googleapis.com/v0/b/myproject-4370c.appspot.com/o/images%2Fmacbook-pro-spacegray-m1-2020.jpeg?alt=media&token=bb792700-7ac9-4dd2-ab21-9deebb3b96ba",
+      "status": 0,
+      "categoryId": 1,
+      "id": 3
+    },
+    {
+      "name": "MacBook Pro 2019 16 inch (MVVJ2/MVVL2) Core i7 2.6Ghz 16GB RAM 512GB SSD",
+      "price": 4200,
+      "photo": "https://firebasestorage.googleapis.com/v0/b/myproject-4370c.appspot.com/o/images%2F1_b22d198cbc754326b1b43270c6c918da.jpeg?alt=media&token=6e9dde13-ecbf-4d8a-af8f-62db77c65603",
+      "status": 0,
+      "categoryId": 1,
+      "id": 4
+    },
+    {
+      "name": "MacBook Pro 2018 15 inch (MR932/ MR962) Core i7 2.2GHz 16GB RAM 256GB SSD",
+      "price": 4100,
+      "photo": "https://firebasestorage.googleapis.com/v0/b/myproject-4370c.appspot.com/o/images%2F15inch_2018_gray.jpeg?alt=media&token=c81c6fc7-4ca3-491a-a366-6fe63d9052c2",
+      "status": 0,
+      "categoryId": 1,
+      "id": 5
+    },
+    {
+      "name": "iPad Air 4 2020 Wifi 64GB",
+      "price": 1300,
+      "photo": "https://firebasestorage.googleapis.com/v0/b/myproject-4370c.appspot.com/o/images%2Fipad-air-2020-gray-866x1024.png?alt=media&token=ecad8e31-95f7-49cb-b168-afff2e8eb8ba",
+      "status": 0,
+      "categoryId": 2,
+      "id": 6
+    },
+    {
+      "name": "IPad 10.2 inch 2020 Wifi 32GB",
+      "price": 790,
+      "photo": "https://firebasestorage.googleapis.com/v0/b/myproject-4370c.appspot.com/o/images%2Fipad-10.2-2020-gray-866x1024.png?alt=media&token=2b31c4b2-a3b8-465c-a8ce-b33987457ac8",
+      "status": 0,
+      "categoryId": 2,
+      "id": 7
+    },
+    {
+      "name": "iPad Pro 11 inch 2021 Apple M1 Wifi 128GB",
+      "price": 1800,
+      "photo": "https://firebasestorage.googleapis.com/v0/b/myproject-4370c.appspot.com/o/images%2FiPad-Pro-M1-11-Silver-.jpeg?alt=media&token=2d1f5e7b-62ae-4c49-81be-52f4a0b3c55b",
+      "status": 0,
+      "categoryId": 2,
+      "id": 8
+    },
+    {
+      "name": "iPad Pro 12.9 inch 2021 Apple M1 Wifi 256GB",
+      "price": 1500,
+      "photo": "https://firebasestorage.googleapis.com/v0/b/myproject-4370c.appspot.com/o/images%2FiPad-Pro-M1-12.9-inch-Grey.jpg?alt=media&token=806374ae-d708-4369-a980-c88e81b9c938",
+      "status": 0,
+      "categoryId": 2,
+      "id": 9
+    },
+    {
+      "name": "Ipad Air 4 2020 Wifi 256GB",
+      "price": 1400,
+      "photo": "https://firebasestorage.googleapis.com/v0/b/myproject-4370c.appspot.com/o/images%2Fipad-air-2020-gray-866x1024%20(1).png?alt=media&token=9f2a8ea4-9905-42f9-9243-541e8ecb9627",
+      "status": 0,
+      "categoryId": 2,
+      "id": 10
+    },
+    {
+      "name": "iPhone 12 Pro Max",
+      "price": 2600,
+      "photo": "https://firebasestorage.googleapis.com/v0/b/myproject-4370c.appspot.com/o/images%2Fiphone-12-pro-max-xanh-duong-new-600x600-600x600.jpeg?alt=media&token=420265aa-9a4b-496a-a485-2c14e0a4363c",
+      "status": 0,
+      "categoryId": 3,
+      "id": 11
+    },
+    {
+      "name": "iPhone 12 mini",
+      "price": 2400,
+      "photo": "https://firebasestorage.googleapis.com/v0/b/myproject-4370c.appspot.com/o/images%2Fiphone-12-mini-den-15-600x600.jpeg?alt=media&token=aeb30139-ab4d-4137-8b32-64c9349ec7a7",
+      "status": 0,
+      "categoryId": 3,
+      "id": 12
+    },
+    {
+      "name": "iPhone 11",
+      "price": 1300,
+      "photo": "https://firebasestorage.googleapis.com/v0/b/myproject-4370c.appspot.com/o/images%2Fiphone-xi-do-600x600.jpeg?alt=media&token=aa84dbe5-5d8d-468c-9587-83cbecc9c400",
+      "status": 0,
+      "categoryId": 3,
+      "id": 13
+    },
+    {
+      "name": "iPhone SE (2020)",
+      "price": 900,
+      "photo": "https://firebasestorage.googleapis.com/v0/b/myproject-4370c.appspot.com/o/images%2Fiphone-se-2020-trang-600x600-600x600.jpeg?alt=media&token=3185b455-a08b-4950-9ec7-1a36603d5af7",
+      "status": 0,
+      "categoryId": 3,
+      "id": 14
+    },
+    {
+      "name": "Apple Watch Series 5 GPS",
+      "price": 600,
+      "photo": "https://firebasestorage.googleapis.com/v0/b/myproject-4370c.appspot.com/o/images%2Fmtp72_7420038619d14062ab14dc5bd94d0ae2.jpeg?alt=media&token=e0f9e10c-1a18-4f16-94db-d4b2a4a3ce47",
+      "status": 0,
+      "categoryId": 4,
+      "id": 15
+    },
+    {
+      "name": "Apple Watch Series 5 GPS + Cellular",
+      "price": 450,
+      "photo": "https://firebasestorage.googleapis.com/v0/b/myproject-4370c.appspot.com/o/images%2Fspace_gray-_gps_4g_29a2ba9ae0924abd8f428b3775a750b0.jpeg?alt=media&token=3e195e06-6d62-4377-8b0d-05f4ec3c34d2",
+      "status": 0,
+      "categoryId": 4,
+      "id": 16
+    },
+    {
+      "name": "Apple Watch Series 3 GPS",
+      "price": 300,
+      "photo": "https://firebasestorage.googleapis.com/v0/b/myproject-4370c.appspot.com/o/images%2Fs-l1600-copy-1024x1024.jpeg?alt=media&token=458eed7b-7dd2-4671-85b4-e88acdafe423",
+      "status": 0,
+      "categoryId": 4,
+      "id": 17
+    },
+    {
+      "name": "Apple Watch Series 4 GPS + Cellular",
+      "price": 620,
+      "photo": "https://firebasestorage.googleapis.com/v0/b/myproject-4370c.appspot.com/o/images%2Fapple-watch-e1546348847901.png?alt=media&token=2cfc43e1-c37e-47dc-ba75-e85891ebe316",
+      "status": 1,
+      "categoryId": 4,
+      "id": 18
+    },
+    {
+      "name": "Apple Watch Series 4 GPS+Cellular",
+      "price": 530,
+      "photo": "https://firebasestorage.googleapis.com/v0/b/myproject-4370c.appspot.com/o/images%2Fs4-steel-milanese-gold-866x1024.png?alt=media&token=501acc0c-cafe-436f-9da5-6d81847dd29a",
+      "status": 1,
+      "categoryId": 4,
+      "id": 19
+    }
+  ],
+  "contacts": [
+    {
+      "name": "Mr Rin",
+      "email": "songoku2192@gmail.com",
+      "phone": 968686686,
+      "message": "send check email",
+      "status": 0,
+      "id": 8
+    }
+  ],
+  "orders": [
+    {
+      "name": "Mr Rin",
+      "email": "songoku2192@gmail.com",
+      "phone": 968686686,
+      "address": "Trịnh Văn Bô - Nam Từ Liêm - Hà Nội",
+      "product": [
+        {
+          "product": "IPad 10.2 inch 2020 Wifi 32GB",
+          "amount": 1,
+          "price": 790,
+          "sum": 790
+        },
+        {
+          "product": "iPad Pro 11 inch 2021 Apple M1 Wifi 128GB",
+          "amount": 1,
+          "price": 1800,
+          "sum": 1800
+        },
+        {
+          "product": "Ipad Air 4 2020 Wifi 256GB",
+          "amount": 1,
+          "price": 1400,
+          "sum": 1400
+        }
+      ],
+      "sumMoney": 3990,
+      "id": 4
+    }
+  ]
+}
