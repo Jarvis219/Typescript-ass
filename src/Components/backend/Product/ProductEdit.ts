@@ -125,12 +125,12 @@ export class ProductEdit extends Component {
                         <div class="card-body">
                             <form class="product" id="product-data">
                                 <div class="form-group">
-                                    <input type="text" class="form-control form-control-user"
+                                    <input type="text" class="check-validate form-control form-control-user"
                                         id="name" aria-describedby="name"
                                         placeholder="Name product...">
                                 </div>
                                 <div class="form-group">
-                                    <input type="number" class="form-control form-control-user"
+                                    <input type="number" class="check-validate form-control form-control-user"
                                         id="price" aria-describedby="price"
                                         placeholder="Price ...">
                                 </div>
@@ -141,14 +141,14 @@ export class ProductEdit extends Component {
                                         placeholder="Photo product...">
                                 </div>
                                 <div class="form-group">
-                                    <select name="status" id="status" class="form-control "  style="border-radius: 30px;" >
+                                    <select name="status" id="status" class="check-validate form-control "  style="border-radius: 30px;" >
                                         <option value="0">puclic</option>
                                         <option value="1">private</option>
                                         <option value="2">cancel</option>
                                     </select>
                                 </div>
                                 <div class="form-group">
-                                    <select name="category" id="category" class="form-control "  style="border-radius: 30px;" >
+                                    <select name="category" id="category" class="check-validate form-control "  style="border-radius: 30px;" >
                                        
                                       
                                     </select>
@@ -202,6 +202,7 @@ export class ProductEdit extends Component {
                 <option value="${ele.id}">${ele.name}</option>
                 `;
             }).join("");
+            
              (document.querySelector('#category') as HTMLInputElement).innerHTML = `
             <option value="${product.categoryId}">${product.category.name}</option>
             ${result}
@@ -287,7 +288,19 @@ export class ProductEdit extends Component {
             // submit dữ liệu
             document.querySelector('#product-data')!.addEventListener('submit', (e)=>{
                 e.preventDefault();
-                updateProduct();
+                let validate:NodeListOf<Element> = document.querySelectorAll('.check-validate');
+                let sum =0;
+                validate.forEach((element:any) => {
+                    if(element.value==''){
+                        element.style.border = '1px solid #FF4D4D';
+                        element.style.color = '#ffffff';
+                        sum ++;
+                    }
+                });
+                if(sum===0){
+                    updateProduct();
+                }
+
             })
         }
     }

@@ -238,28 +238,28 @@ export class ProductCreat extends Component {
                         <div class="card-body">
                             <form class="product" id="product-data">
                                 <div class="form-group">
-                                    <input type="text" class="form-control form-control-user"
+                                    <input type="text" class="check-validate form-control form-control-user"
                                         id="name" aria-describedby="name"
                                         placeholder="Name product...">
                                 </div>
                                 <div class="form-group">
-                                    <input type="number" class="form-control form-control-user"
+                                    <input type="number" class="check-validate form-control form-control-user"
                                         id="price" aria-describedby="price"
                                         placeholder="Price ...">
                                 </div>
                                 <div class="form-group">
-                                    <input type="file" class="form-control  " style="border-radius: 30px; padding:10px 0 40px 15px;"
+                                    <input type="file" class=" form-control  " style="border-radius: 30px; padding:10px 0 40px 15px;"
                                         id="image" aria-describedby="image"
                                         placeholder="Photo product...">
                                 </div>
                                 <div class="form-group">
-                                    <select name="status" id="status" class="form-control "  style="border-radius: 30px;" >
+                                    <select name="status" id="status" class="check-validate form-control "  style="border-radius: 30px;" >
                                         <option value="0">puclic</option>
                                         <option value="1">private</option>
                                     </select>
                                 </div>
                                 <div class="form-group">
-                                    <select name="category" id="category" class="form-control "  style="border-radius: 30px;" >
+                                    <select name="category" id="category" class="check-validate form-control "  style="border-radius: 30px;" >
                                       
                                     </select>
                                 </div>
@@ -307,6 +307,10 @@ export class ProductCreat extends Component {
      
      // tạo sản phẩm
     async function creatProduct(){
+        
+
+
+
         const firebaseConfig = {
             apiKey: "AIzaSyB4G8OEv42OHFkA-Sxqa7q0uqoNOMZwre4",
             authDomain: "myproject-4370c.firebaseapp.com",
@@ -327,7 +331,7 @@ export class ProductCreat extends Component {
           let storageRef = firebase.storage().ref(`images/${images.name}`);
               storageRef.put(images).then(()=>{
                   storageRef.getDownloadURL().then(async (url: string)=>{
-                      console.log(url)
+                    //   console.log(url)
                         const  name:string= (document.querySelector('#name') as HTMLInputElement).value;
                         const  price:number= parseInt((document.querySelector('#price') as HTMLInputElement).value);
                         const  categoryId:number=parseInt((document.querySelector('#category') as HTMLInputElement).value);
@@ -349,7 +353,18 @@ export class ProductCreat extends Component {
     // creatProduct();
     document.querySelector('#product-data')!.addEventListener('submit',(e)=>{
         e.preventDefault();
-        creatProduct();
+        let validate:NodeListOf<Element> = document.querySelectorAll('.check-validate');
+        let sum =0;
+        validate.forEach((element:any) => {
+            if(element.value==''){
+                element.style.border = '1px solid #FF4D4D';
+                element.style.color = '#ffffff';
+                sum ++;
+            }
+        });
+        if(sum===0){
+            creatProduct();
+        }
     })
 
     }

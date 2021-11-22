@@ -1,5 +1,6 @@
 var CheckOut = /** @class */ (function () {
-    function CheckOut(_id, _name, _phone, _email, _address, _product, _sumMoney) {
+    function CheckOut(_id, _name, _phone, _email, _address, _product, _sumMoney, _status) {
+        if (_status === void 0) { _status = 'not approved yet'; }
         this._id = _id;
         this._name = _name;
         this._phone = _phone;
@@ -7,13 +8,15 @@ var CheckOut = /** @class */ (function () {
         this._address = _address;
         this._product = _product;
         this._sumMoney = _sumMoney;
+        this._status = _status;
         this._id = _id,
             this._name = _name,
             this._email = _email;
         this._address = _address,
             this._product = _product,
             this._phone = _phone,
-            this._sumMoney = _sumMoney;
+            this._sumMoney = _sumMoney,
+            this._status = _status;
     }
     Object.defineProperty(CheckOut.prototype, "id", {
         get: function () {
@@ -81,6 +84,16 @@ var CheckOut = /** @class */ (function () {
         },
         set: function (_sumMoney) {
             this._sumMoney = _sumMoney;
+        },
+        enumerable: false,
+        configurable: true
+    });
+    Object.defineProperty(CheckOut.prototype, "status", {
+        get: function () {
+            return this._status;
+        },
+        set: function (_status) {
+            this._status = _status;
         },
         enumerable: false,
         configurable: true

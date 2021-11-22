@@ -118,7 +118,7 @@ export class CateCreat extends Component {
                         <div class="card-body">
                             <form class="cate" id="cate-data">
                                 <div class="form-group">
-                                    <input type="text" class="form-control form-control-user"
+                                    <input type="text" class="check-validate form-control form-control-user"
                                         id="name" aria-describedby="name"
                                         placeholder="Name category...">
                                 </div>
@@ -152,11 +152,16 @@ export class CateCreat extends Component {
     public async afterRender(){
         document.getElementById('cate-data')!.addEventListener('submit',async (e)=>{
             e.preventDefault();
-            const name = (document.querySelector('#name') as HTMLInputElement).value;
-            let data:Category = new Category( Math.round(Math.random() * 700000), name);
-            await CategoryAPI.create(data).then(() => {
-                window.location.href = '#/category/index'
-            })
+            if((document.querySelector('.check-validate')as HTMLInputElement).value==''){ 
+                (document.querySelector('.check-validate')as HTMLInputElement).style.border = '1px solid #FF4D4D';
+            }else{
+                const name = (document.querySelector('#name') as HTMLInputElement).value;
+                let data:Category = new Category(0, name);
+                await CategoryAPI.create(data).then(() => {
+                    window.location.href = '#/category/index'
+                })
+            }
+          
         });
     }
 }

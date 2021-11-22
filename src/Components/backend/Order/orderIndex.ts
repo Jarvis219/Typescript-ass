@@ -122,6 +122,8 @@ export class OrderIndex extends Component {
                                             <th>Phone</th>
                                             <th>Address</th>
                                             <th>Sum Price</th>
+                                            <th>Status</th>
+
                                             <th>view</i></th>
                                             <th colspan="2">Orther</th>
                                         </tr>
@@ -133,6 +135,7 @@ export class OrderIndex extends Component {
                                             <th>Phone</th>
                                             <th>Address</th>
                                             <th>Sum Price</th>
+                                            <th>Status</th>
                                             <th>view</i></th>
                                             <th colspan="2">Orther</th>
                                         </tr>
@@ -238,6 +241,29 @@ export class OrderIndex extends Component {
             let datas = await OrderAPI.all();
             let orders = await datas.json();
             let result = orders.map((element:CheckOut)=>{
+                const statusTable = () => { 
+                    if (element.status == 'not approved yet') {
+                        return /*html*/ `
+                        <option value="${element.status}">${element.status}</option>
+                        <option value="approved">approved</option>
+                        <option value="delivered">delivered</option>
+                        <option value="cancelled">cancelled</option>
+                        `;
+                    } else if (element.status == 'approved') {
+                        return /*html*/ `
+                        <option value="approved">approved</option>
+                        <option value="delivered">delivered</option>
+                        <option value="cancelled">cancelled</option>
+                        `;
+                    } else if (element.status == 'delivered') {
+                        return /*html*/ `
+                        <option value="approved">delivered</option>
+                        <option value="cancelled">cancelled</option>
+                        `;
+                    } else {
+                        return ` <option value="cancelled">cancelled</option>`;
+                    }
+                }
                 return `
                 <tr class="col-${element.id}">
                     <td  class="border border-indigo-600 px-3  " ><span class="block py-12">${element.name}</span></td>
@@ -245,8 +271,10 @@ export class OrderIndex extends Component {
                     <td  class="border border-indigo-600 px-3 "><span class="block py-12">0${element.phone}</span></td>
                     <td  class="border border-indigo-600 px-3"><span class=" block py-12">${element.address}</span></td>
                     <td  class="border border-indigo-600 px-3"><span class=" block py-12">$${element.sumMoney}</span> </td>
+                    <td  class="border border-indigo-600 px-3"><span class=" block py-12"><form><select data-id="${element.id}" id="select-status">
+                    ${statusTable()}
+                    </select></form></span> </td>
                     <td  class="border border-indigo-600 px-3"><span data-id="${element.id}" class="view-order cursor-pointer block py-12"><i class="far fa-eye"></i></span></td>
-                    <td class="border border-indigo-600 px-3 " ><a href="#/order/edit/${element.id}"  data-navigo class="block my-12 mx-auto shadow bg-green-400 py-1 px-2 rounded text-white hover:bg-blue-400 "><button disabled>edit</button><a></td>
                     <td class="border border-indigo-600 px-3 " ><button data-id="${element.id}"  class="deleted block my-12 py-1 mx-auto shadow bg-red-400 px-2 rounded text-white hover:bg-gray-400">delete</button></td>
                 </tr>
                 `;
@@ -254,6 +282,7 @@ export class OrderIndex extends Component {
             document.getElementById('data-order')!.innerHTML = await result;
             checkView();
             deleted();
+            changeStatus();
          }
 
          function checkView(){
@@ -265,8 +294,11 @@ export class OrderIndex extends Component {
                      if(ele instanceof HTMLElement){
                          let id = ele.dataset.id;
                         try {
+
                             let response = await OrderAPI.find(id);
                             let data =  await response.json();
+
+                            
                             document.querySelector('#name-detail')!.innerHTML = 'Name: '+ data.name;
                             document.querySelector('#email-detail')!.innerHTML = 'Email: '+ data.email;
                             document.querySelector('#address-detail')!.innerHTML = 'Address: '+ data.address;
@@ -297,7 +329,7 @@ export class OrderIndex extends Component {
              })
          }
 
-         function deleted(){
+         function deleted():void{
              document.querySelectorAll('.deleted').forEach(ele=>{
                  ele.addEventListener('click',async function(){
                      if(ele instanceof HTMLElement){
@@ -316,6 +348,32 @@ export class OrderIndex extends Component {
                          }
                      }
                  })
+             })
+         }
+
+         function changeStatus():void{
+         let status =    document.querySelector('#select-status');
+         status.addEventListener('change',async function(){
+             
+             if(status instanceof HTMLElement){
+                let id :string = status.dataset.id;
+                let statusAs:string = (status as HTMLInputElement).value
+                // console.log(statusAs)
+
+                await OrderAPI.find(id)
+                .then(data=>data.json())
+                .then(async (data)=>{
+                   
+                   let datas:CheckOut = new CheckOut(Number(id), data.name, data.phone,data.email, data.address, data.product ,data.sumMoney, statusAs)
+                   await OrderAPI.update(id,datas)
+                   .then(()=>{
+                       window.location.href = '#/order/index';
+                   })
+                })
+
+               
+             }
+              
              })
          }
     }

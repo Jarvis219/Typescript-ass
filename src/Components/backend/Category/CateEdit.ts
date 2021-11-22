@@ -54,7 +54,7 @@ export class CateEdit extends Component {
                                 aria-labelledby="searchDropdown">
                                 <form class="form-inline mr-auto w-100 navbar-search">
                                     <div class="input-group">
-                                        <input type="text" class="form-control bg-light border-0 small"
+                                        <input type="text" class="check-validate form-control bg-light border-0 small"
                                             placeholder="Search for..." aria-label="Search"
                                             aria-describedby="basic-addon2">
                                         <div class="input-group-append">
@@ -161,15 +161,22 @@ export class CateEdit extends Component {
              (document.querySelector('#name') as HTMLInputElement).value = dataCate.name;
             document.querySelector('#btn-cate')!.addEventListener('submit',async (e)=>{
               e.preventDefault();
-              const inPName = document.querySelector('#name') as HTMLInputElement;
+
+              if((document.querySelector('.check-validate')as HTMLInputElement).value==' '){ 
+                (document.querySelector('.check-validate')as HTMLInputElement).style.border = '1px solid #FF4D4D';
+             }else{
+                const inPName = document.querySelector('#name') as HTMLInputElement;
                const name: string = inPName.value;
              
-                  let cate: Category = new Category( Math.round(Math.random() * 700000), name);
+                  let cate: Category = new Category(Number(this._id), name);
                   if(typeof this._id != 'undefined'){
+                    //   console.log(this._id)
                      await CategoryAPI.update(this._id,cate).then(()=>{
                          window.location.hash = '#/category/index';
                      })
                   }
+             }
+              
            })
           }
     }

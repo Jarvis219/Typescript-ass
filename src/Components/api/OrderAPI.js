@@ -12,7 +12,8 @@ var OrderAPI = /** @class */ (function () {
             phone: data.phone,
             address: data.address,
             product: data.product,
-            sumMoney: data.sumMoney
+            sumMoney: data.sumMoney,
+            status: data.status
         };
         var url = 'http://localhost:3001/orders';
         return fetch(url, { method: "POST",
@@ -23,15 +24,17 @@ var OrderAPI = /** @class */ (function () {
         });
     };
     OrderAPI.update = function (id, data) {
+        // console.log(data, id)
         var dataNew = {
             name: data.name,
             email: data.email,
             phone: data.phone,
             address: data.address,
             product: data.product,
-            sumMoney: data.sumMoney
+            sumMoney: data.sumMoney,
+            status: data.status
         };
-        var url = 'http://localhost:3001/orders';
+        var url = 'http://localhost:3001/orders/' + id;
         return fetch(url, { method: "PUT",
             headers: {
                 "content-type": "application/json"

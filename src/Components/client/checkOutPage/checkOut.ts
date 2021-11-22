@@ -130,7 +130,7 @@ export class CheckOutPage extends Component {
                 const sumMoney:number = parseInt((document.querySelector('#sum-price') as HTMLInputElement).innerHTML);
                 const product:object=getCheckout;
                 let order:CheckOut = new CheckOut(0,name,phone,email,address,product,sumMoney);
-                console.log(order)
+                // console.log(order)
                 await OrderAPI.create(order)
                 .then(() => {
                     alert('Check out successfully!')

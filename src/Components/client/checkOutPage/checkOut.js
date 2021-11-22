@@ -93,7 +93,7 @@ var CheckOutPage = /** @class */ (function (_super) {
                                 sumMoney = parseInt(document.querySelector('#sum-price').innerHTML);
                                 product = getCheckout;
                                 order = new CheckOut(0, name, phone, email, address, product, sumMoney);
-                                console.log(order);
+                                // console.log(order)
                                 return [4 /*yield*/, OrderAPI.create(order)
                                         .then(function () {
                                         alert('Check out successfully!');
@@ -102,6 +102,7 @@ var CheckOutPage = /** @class */ (function (_super) {
                                         window.location.href = '/';
                                     }).catch(function (error) { console.log(error); })];
                             case 1:
+                                // console.log(order)
                                 _a.sent();
                                 return [2 /*return*/];
                         }

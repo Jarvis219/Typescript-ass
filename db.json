@@ -2,17 +2,10 @@
   "users": [
     {
       "email": "songoku2192@gmail.com",
-      "password": "$2a$10$kWGYJEsMYyo5rcx5z/IQge5K.tB6e4PiL1IvHJQ5wrLc2mirQ9q1a",
-      "name": "Mr Rin",
+      "password": "$2a$10$sesZIMJihrQIX5sG7jOmkehey6.in4TV2A.MDEIYiAUG0WEbYUC.C",
+      "name": "songoku2192@gmail.com",
       "permissions": 1,
-      "id": 2
-    },
-    {
-      "email": "taquang.hskx.2000@gmail.com",
-      "password": "$2a$10$MRln6kWHTajZlZm91voNlOCQoeoEvw2eHaAw.0MgJ0Xkh7VzbRvDq",
-      "name": "quangtaph12673",
-      "permissions": 0,
-      "id": 3
+      "id": 1
     }
   ],
   "categories": [
@@ -180,7 +173,7 @@
     },
     {
       "name": "Apple Watch Series 4 GPS+Cellular",
-      "price": 530,
+      "price": 567,
       "photo": "https://firebasestorage.googleapis.com/v0/b/myproject-4370c.appspot.com/o/images%2Fs4-steel-milanese-gold-866x1024.png?alt=media&token=501acc0c-cafe-436f-9da5-6d81847dd29a",
       "status": 1,
       "categoryId": 4,
@@ -199,32 +192,21 @@
   ],
   "orders": [
     {
-      "name": "Mr Rin",
+      "name": "Trần Quang",
       "email": "songoku2192@gmail.com",
       "phone": 968686686,
       "address": "Trịnh Văn Bô - Nam Từ Liêm - Hà Nội",
       "product": [
         {
-          "product": "IPad 10.2 inch 2020 Wifi 32GB",
+          "product": "iMac 2021 24 inch Retina 4.5K Apple M1 16GB RAM 256GB SSD 7-Core GPU",
           "amount": 1,
-          "price": 790,
-          "sum": 790
-        },
-        {
-          "product": "iPad Pro 11 inch 2021 Apple M1 Wifi 128GB",
-          "amount": 1,
-          "price": 1800,
-          "sum": 1800
-        },
-        {
-          "product": "Ipad Air 4 2020 Wifi 256GB",
-          "amount": 1,
-          "price": 1400,
-          "sum": 1400
+          "price": 4500,
+          "sum": 4500
         }
       ],
-      "sumMoney": 3990,
-      "id": 4
+      "sumMoney": 4500,
+      "status": "not approved yet",
+      "id": 2
     }
   ]
 }

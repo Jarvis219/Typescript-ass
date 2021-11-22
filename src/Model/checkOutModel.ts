@@ -1,12 +1,13 @@
 export class CheckOut{
-    public constructor(private _id: number , private _name: string ,private _phone:number, private _email: string , private _address: string , private _product:object, private _sumMoney:number){
+    public constructor(private _id: number , private _name: string ,private _phone:number, private _email: string , private _address: string , private _product:object, private _sumMoney:number, private _status:string='not approved yet'){
         this._id = _id,
         this._name = _name,
         this._email = _email
         this._address= _address,
         this._product = _product,
         this._phone= _phone,
-        this._sumMoney = _sumMoney
+        this._sumMoney = _sumMoney, 
+        this._status = _status
     }
 
     get id(): number {
@@ -65,5 +66,13 @@ export class CheckOut{
 
     set sumMoney(_sumMoney: number) {
         this._sumMoney = _sumMoney;
+    }
+
+    get status(): string {
+        return this._status;
+    }
+
+    set status(_status: string) {
+        this._status = _status;
     }
 }

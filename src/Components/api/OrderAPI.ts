@@ -12,7 +12,8 @@ export class OrderAPI{
             phone:data.phone,
             address:data.address,
             product:data.product,
-            sumMoney:data.sumMoney
+            sumMoney:data.sumMoney,
+            status:data.status
         }
         const url = 'http://localhost:3001/orders';
         return fetch(url, { method: "POST",
@@ -24,15 +25,18 @@ export class OrderAPI{
     }
 
     public static update(id:string, data:CheckOut){
+        // console.log(data, id)
         const dataNew={
             name:data.name,
             email:data.email,
             phone:data.phone,
             address:data.address,
             product:data.product,
-            sumMoney:data.sumMoney
+            sumMoney:data.sumMoney,
+            status:data.status
+
         }
-        const url = 'http://localhost:3001/orders';
+        const url = 'http://localhost:3001/orders/'+id;
         return fetch(url, { method: "PUT",
     headers:{
         "content-type": "application/json"
